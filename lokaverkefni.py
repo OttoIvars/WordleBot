@@ -11,7 +11,7 @@ import os
 #allowed_final_path = (os.path.join(os.getcwd(), "allowed_words.txt"))
 #print(allowed_final_path)
 allowed_final = np.loadtxt(os.path.join(os.getcwd(), "allowed_words.txt"),dtype='str')
-possible_final = np.loadtxt(os.path.join(os.getcwd(), "allowed_words.txt"),dtype='str')
+possible_final = np.loadtxt(os.path.join(os.getcwd(), "possible_words.txt"),dtype='str')
 #allowed_final = np.loadtxt("C:/Users/ottom/Documents/Mynsto/allowed_words.txt" , dtype='str')
 #possible_final = np.loadtxt("C:/Users/ottom/Documents/Mynsto/possible_words.txt" , dtype='str') 
 
