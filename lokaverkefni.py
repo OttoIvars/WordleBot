@@ -224,6 +224,8 @@ if hvadaleik == 'bot':
     #Hermun með besta orði
     #b = input('skrifaðu eihv:'
     sum = 0
+    print('possible_words.txt:')
+    print(*possible_final)
     targetWord = input('Skrifaðu orð sem er í possible_words.txt:')#random.choice(possible_final_char)
     target = stringToInt(targetWord)
     pool = possible_final_char
