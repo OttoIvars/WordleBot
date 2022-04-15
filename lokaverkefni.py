@@ -264,7 +264,7 @@ elif hvadaleik == 'hjalp':
     print('Skrifaðu litina á sérhverjum staf,' ,end='')
     print('\033[1;32m' +' 2 fyrir grænan' + '\033[1;37m' +', ' ,end='')
     print('\033[1;33m' + '1 fyrir gulan' + '\033[1;37m')
-    print('og 0 fyrir gráan' + '\033[1;31m'+'/rauðan.' +'\033[1;37m' +' á eftir')
+    print('og 0 fyrir gráan/' + '\033[1;31m'+'rauðan.' +'\033[1;37m' +' á eftir')
     print('\n'+ 'Dæmi')
     print('orð: ', end='')
     prentalitur('slate', [0,2,2,0,1])
@@ -274,6 +274,7 @@ elif hvadaleik == 'hjalp':
     #Hermun með besta orði
     #
     print('\n'+'Hint: gott upphafsgisk er t.d. \'slate\' ')
+    print('\n' + 'Ef þú vilt hætta, ekki skrifa neitt á eftir \'orð:\' og ýttu á Enter.')
     pool = possible_final_char
     sum = 0
     while(True):
