@@ -257,7 +257,7 @@ if hvadaleik == 'bot':
             break
     print()
     if sum == 0:
-        print('Bot-in náði ekki að leysa orðið í 6 giskum eða minna.')
+        print('Bot-inn náði ekki að leysa orðið í 6 giskum eða minna.')
     else:
         print('Leyst með ' + str(sum) + ' giskum.')
 
