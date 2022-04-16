@@ -237,7 +237,7 @@ if hvadaleik == 'bot':
     words, svar = giska(guess1, target, pool)
     print('Veljum orðið ',end = '')
     prentalitur(guessWord,svar)
-    print(' úr ' + str(len(pool))+  ' mögulegum giskum')
+    print(' úr ' + str(len(pool))+  ' mögulegum giskum.')
     #print(svar)
     
     if svar == [2, 2, 2, 2, 2]:
@@ -251,22 +251,24 @@ if hvadaleik == 'bot':
           words, svar = giska(guess, target, words)
           print('Veljum orðið ',end = '')
           prentalitur(guessWord,svar)
-          print(' úr ' + str(len(words_old))+  ' mögulegum giskum')
+          print(' úr ' + str(len(words_old))+  ' mögulegum giskum.')
           if svar == [2,2,2,2,2]:
             sum = sum+2+j
             break
-    
-      
-    print('Leyst með ' + str(sum) + ' giskum')
+    print()
+    if sum == 0:
+        print('Bot-in náði ekki að leysa orðið í 6 giskum eða minna.')
+    else:
+        print('Leyst með ' + str(sum) + ' giskum.')
 
 elif hvadaleik == 'hjalp':
     print()
     print('Hjálp með Wordle dagsins!')
-    print('Skrifaðu inn orðið sem þú settir inn á Wordle síðunni á eftir orð:')
+    print('Skrifaðu inn giskið sem þú settir inn á Wordle síðunni á eftir \'orð:\' ')
     print('Skrifaðu litina á sérhverjum staf,' ,end='')
     print('\033[1;32m' +' 2 fyrir grænan' + '\033[1;37m' +', ' ,end='')
     print('\033[1;33m' + '1 fyrir gulan' + '\033[1;37m')
-    print('og 0 fyrir gráan/' + '\033[1;31m'+'rauðan.' +'\033[1;37m' +' á eftir')
+    print('og 0 fyrir gráan/' + '\033[1;31m'+'rauðan.' +'\033[1;37m' +' á eftir \'litir:\' ')
     print('\n'+ 'Dæmi')
     print('orð: ', end='')
     prentalitur('slate', [0,2,2,0,1])
@@ -275,7 +277,7 @@ elif hvadaleik == 'hjalp':
     ##hjálp hluti
     #Hermun með besta orði
     #
-    print('\n'+'Hint: gott upphafsgisk er t.d. \'slate\' ')
+    print('\n'+'Hint: gott upphafsgisk er t.d. \'slate\' .')
     print('\n' + 'Ef þú vilt hætta, ekki skrifa neitt á eftir \'orð:\' og ýttu á Enter.')
     pool = possible_final_char
     sum = 0
@@ -299,6 +301,9 @@ elif hvadaleik == 'hjalp':
         pool = green(pool,stringToInt(ord_in) , litir_in_int)
         pool = yellow(pool, litir_in_int, stringToInt(ord_in))
         pool = grey(pool, litir_in_int, stringToInt(ord_in), [])
+        print('Möguleg orð til að giska á eru:')
+        print(*pool)
+        print()
         print('Veljum orðið ',end = '')
         print('\033[1;32m' + bestWord(pool) + '\033[1;37m',end = '')
         print(' úr ' + str(len(pool))+  ' mögulegum giskum')
